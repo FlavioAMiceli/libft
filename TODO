@@ -1,0 +1,17 @@
+Write:
+	strrev (makes optimization for some functions easy. Easy, but not ideal.)
+
+Rewrite using optimizable functions:
+	memmove
+
+Optimize:
+	memcmp
+	memchr
+
+Optimize (low priority):
+	range(_step)
+	strrchr
+
+Generalize:
+	set_magic (for strlen and memchr)
+	count_words (in strsplit)
