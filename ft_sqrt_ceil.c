@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_floor(int nb)
+int	ft_sqrt_ceil(int nb)
 {
 	int min;
 	int max;
