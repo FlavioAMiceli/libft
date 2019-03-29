@@ -70,6 +70,9 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
+int					ft_sqrt_floor(int nb);
+int					ft_sqrt_ceil(int nb);
+
 int					ft_min(int x, int y);
 int					ft_max(int x, int y);
 
