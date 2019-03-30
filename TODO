@@ -5,7 +5,6 @@ Rewrite using optimizable functions:
 	memmove
 
 Optimize:
-	memcmp
 	memchr
 
 Optimize (low priority):

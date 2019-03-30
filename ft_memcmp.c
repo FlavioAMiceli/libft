@@ -12,39 +12,38 @@
 
 #include "libft.h"
 
-static void				memcmp_unrolled(\
-	const unsigned long **str1, const unsigned long **str2, size_t *len)
+static int				memcmp_unrolled(\
+	const unsigned long **str1, const unsigned long **str2, size_t len)
 {
-	while ((*len) / (4 * sizeof(unsigned long)) > 0)
+	while (len / (sizeof(unsigned long) * 4) > 0)
 	{
 		if ((**str1) != (**str2))
-			break ;
-		*str1 += 1;
-		*str2 += 1;
-		(*len) -= sizeof(unsigned long);
+			return (len);
+		(*str1)++;
+		(*str2)++;
 		if ((**str1) != (**str2))
-			break ;
-		*str1 += 1;
-		*str2 += 1;
-		(*len) -= sizeof(unsigned long);
+			return (len - sizeof(unsigned long));
+		(*str1)++;
+		(*str2)++;
 		if ((**str1) != (**str2))
-			break ;
-		*str1 += 1;
-		*str2 += 1;
-		(*len) -= sizeof(unsigned long);
+			return (len - (2 * sizeof(unsigned long)));
+		(*str1)++;
+		(*str2)++;
 		if ((**str1) != (**str2))
-			break ;
-		*str1 += 1;
-		*str2 += 1;
-		(*len) -= sizeof(unsigned long);
+			return (len - (3 * sizeof(unsigned long)));
+		(*str1)++;
+		(*str2)++;
+		len -= 4 * sizeof(unsigned long);
 	}
+	return (len);
 }
 
 static unsigned long	memcmp_wordcmp(\
 	const unsigned long **str1, const unsigned long **str2, size_t n)
 {
-	memcmp_unrolled(str1, str2, &n);
-	while (n / (sizeof(unsigned long)) > 0 && **str1 == **str2)
+	if (n >= sizeof(unsigned long) * 4)
+		n = memcmp_unrolled(str1, str2, n);
+	while (n / sizeof(unsigned long) > 0 && **str1 == **str2)
 	{
 		(*str1)++;
 		(*str2)++;
@@ -60,6 +59,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
+	n--;
 	if (n >= sizeof(unsigned long) * 4)
 	{
 		while (((unsigned long)str1 & (sizeof(unsigned long) - 1)) != 0)
