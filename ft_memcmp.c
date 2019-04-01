@@ -15,7 +15,7 @@
 static int				memcmp_unrolled(\
 	const unsigned long **str1, const unsigned long **str2, size_t len)
 {
-	while (len / (sizeof(unsigned long) * 4) > 0)
+	while ((len - 1) / (sizeof(unsigned long) * 4) > 0)
 	{
 		if ((**str1) != (**str2))
 			return (len);
@@ -41,9 +41,9 @@ static int				memcmp_unrolled(\
 static unsigned long	memcmp_wordcmp(\
 	const unsigned long **str1, const unsigned long **str2, size_t n)
 {
-	if (n >= sizeof(unsigned long) * 4)
+	if ((n - 1) >= sizeof(unsigned long) * 4)
 		n = memcmp_unrolled(str1, str2, n);
-	while (n / sizeof(unsigned long) > 0 && **str1 == **str2)
+	while ((n - 1) / sizeof(unsigned long) > 0 && **str1 == **str2)
 	{
 		(*str1)++;
 		(*str2)++;
@@ -59,8 +59,9 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	n--;
-	if (n >= sizeof(unsigned long) * 4)
+	if (n == 0)
+		return (0);
+	if (n - 1 >= sizeof(unsigned long) * 4)
 	{
 		while (((unsigned long)str1 & (sizeof(unsigned long) - 1)) != 0)
 		{
@@ -73,11 +74,5 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n)
 		n = memcmp_wordcmp(\
 			(const unsigned long **)&str1, (const unsigned long **)&str2, n);
 	}
-	while (n > 0 && *str1 == *str2)
-	{
-		str1++;
-		str2++;
-		n--;
-	}
-	return (*str1 - *str2);
+	return (ft_slow_memcmp(str1, str2, n));
 }

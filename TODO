@@ -1,5 +1,6 @@
 Write:
 	strrev (makes optimization for some functions easy. Easy, but not ideal.)
+	strlcat crashes if delim is 1 byte after n or soemthing? Ask Liewe.
 
 Rewrite using optimizable functions:
 	memmove

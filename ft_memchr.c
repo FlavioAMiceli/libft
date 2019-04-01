@@ -115,8 +115,5 @@ void					*ft_memchr(const void *s, int c, size_t n)
 	if (ret != NULL)
 		return ((void *)ret);
 	b += (n / sizeof(*longword)) * sizeof(*longword);
-	ret = ft_slow_memchr(b, c, n % sizeof(*longword));
-	if (ret != NULL)
-		return (ret);
-	return (NULL);
+	return (ft_slow_memchr(b, c, n % sizeof(*longword)));
 }
