@@ -26,6 +26,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		ft_memcpy(&dst[len_dst], src, n);
 		dst[len_src + len_dst] = '\0';
 	}
-	return (size < (unsigned long)len_dst ?
+	return (size <= (unsigned long)len_dst ?
 		size + len_src : len_src + len_dst);
 }
