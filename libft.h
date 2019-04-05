@@ -37,12 +37,15 @@ typedef struct		s_magicmask
 	unsigned long	word;
 }					t_magicmask;
 
+void				ft_getsegfault(void);
+
 void				ft_putnbr(int n);
 void				ft_putchar(char	c);
 
 void				ft_putstr(const char *s);
 void				ft_putendl(const char *s);
 void				ft_strclr(char *s);
+void				ft_read_from_abs_str(char *absent_string);
 
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar_fd(char c, int fd);
