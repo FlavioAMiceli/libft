@@ -37,15 +37,12 @@ typedef struct		s_magicmask
 	unsigned long	word;
 }					t_magicmask;
 
-void				ft_getsegfault(void);
-
 void				ft_putnbr(int n);
 void				ft_putchar(char	c);
 
 void				ft_putstr(const char *s);
 void				ft_putendl(const char *s);
 void				ft_strclr(char *s);
-void				ft_read_from_abs_str(char *absent_string);
 
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar_fd(char c, int fd);
@@ -94,7 +91,6 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 int					ft_count_if(char **tab, int (*f)(char*));
 
 void				*ft_memalloc(size_t size);
-void				*ft_realloc(void *mem, size_t old_size, size_t size);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -115,8 +111,6 @@ char				*ft_strtrim(char const *s);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_memdup(char const *b, size_t n);
-
-char				*ft_strrealloc(char *str, size_t size);
 
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 
