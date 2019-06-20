@@ -6,7 +6,7 @@
 /*   By: fmiceli <fmiceli@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/11 11:56:34 by fmiceli       #+#    #+#                 */
-/*   Updated: 2019/02/02 16:29:06 by fmiceli       ########   odam.nl         */
+/*   Updated: 2019/06/20 18:41:27 by fmiceli       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void				ft_foreach(int *tab, int len, void (*f)(int));
 
 void				ft_memdel(void **ap);
 void				ft_strdel(char **as);
+void				ft_nodedel(void *p, size_t n);
 
 int					ft_isupper(int c);
 int					ft_islower(int c);
