@@ -22,6 +22,8 @@
 # define FALSE 0
 # define FT_INT_MIN -2147483648
 # define FT_INT_MAX 2147483647
+# define BUFF_SIZE 32
+# define FILE_DESC content_size
 
 typedef struct		s_list
 {
@@ -30,12 +32,22 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_dll
+{
+	void			*content;
+	size_t			content_size;
+	struct s_dll	*next;
+	struct s_dll	*previous;
+}					t_dll;
+
 typedef struct		s_magicmask
 {
 	unsigned long	lomagic;
 	unsigned long	himagic;
 	unsigned long	word;
 }					t_magicmask;
+
+int					get_next_line(const int fd, char **line);
 
 void				ft_putnbr(int n);
 void				ft_putchar(char	c);
@@ -143,5 +155,13 @@ void				ft_lstappend(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+
+t_dll				*ft_dllnew(void const *content, size_t content_size);
+t_dll				*ft_dlldequeue(t_dll **alst);
+t_dll				*ft_dllunlink(t_dll *node);
+void				ft_dlladd(t_dll **alst, t_dll *new);
+void				ft_dllappend(t_dll **alst, t_dll *new);
+void				ft_dlldelone(t_dll **alst, void (*del)(void *, size_t));
+void				ft_dlldel(t_dll **alst, void (*del)(void *, size_t));
 
 #endif

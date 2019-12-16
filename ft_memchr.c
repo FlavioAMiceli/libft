@@ -74,7 +74,8 @@ static void				*memchr_unroll_prep(int stop_char, \
 	stop = memchr_get_word(stop_char);
 	while (xlen > 0)
 	{
-		longword = *longword_ptr++;
+		longword = *longword_ptr;
+		longword_ptr++;
 		if ((((longword - magic->lomagic) \
 			& ~longword & magic->himagic) ^ stop) != 0)
 		{
