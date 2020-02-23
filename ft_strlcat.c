@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	len_src;
-	int	len_dst;
-	int	n;
+	unsigned int	len_src;
+	unsigned int	len_dst;
+	int				n;
 
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);
@@ -24,7 +24,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (n > 0)
 	{
 		ft_memcpy(&dst[len_dst], src, n);
-		dst[len_src + len_dst < (int)size ?\
+		dst[len_src + len_dst < (unsigned int)size ?\
 			len_src + len_dst : size - 1] = '\0';
 	}
 	return (size <= (unsigned long)len_dst ?

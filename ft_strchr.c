@@ -14,10 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
 	int	len;
 
-	i = 0;
 	len = ft_strlen(s);
 	if (c == '\0')
 		return ((char *)&s[len]);
