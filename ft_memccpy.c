@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	if (stop_addres != NULL)
 	{
 		ft_memcpy(dst, src, stop_addres - (unsigned char *)src + 1);
-		return (&dst[stop_addres - (unsigned char *)src + 1]);
+		return (dst + (stop_addres - (unsigned char *)src + 1));
 	}
 	ft_memcpy(dst, src, n);
 	return (NULL);
