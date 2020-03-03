@@ -20,7 +20,7 @@
 
 typedef struct		s_dict
 {
-	int				*keys;
+	char			*keys;
 	void			*values;
 	int				dict_len;
 }					t_dict;
