@@ -17,6 +17,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "hashtable.h"
 
 # define TRUE 1
 # define FALSE 0
