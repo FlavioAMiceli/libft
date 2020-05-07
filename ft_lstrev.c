@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-t_list *ft_lstrev(t_list *lst)
+t_list *ft_lstrev(t_list **alst)
 {
     t_list *curr;
 
-    if (!lst)
+    if (!alst || !(*alst))
         return (NULL);
-    curr = ft_lstdequeue(lst);
+    curr = ft_lstdequeue(alst);
     curr->next = NULL;
-    while (lst)
-        ft_lstadd(&curr, ft_lstdequeue(lst));
+    while (alst)
+        ft_lstadd(&curr, ft_lstdequeue(alst));
     return (curr);
 }
