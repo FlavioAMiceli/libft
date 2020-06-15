@@ -15,12 +15,17 @@
 t_list *ft_lstrev(t_list **alst)
 {
     t_list *curr;
+    t_list *tmp;
 
     if (!alst || !(*alst))
         return (NULL);
     curr = ft_lstdequeue(alst);
     curr->next = NULL;
-    while (alst)
-        ft_lstadd(&curr, ft_lstdequeue(alst));
+    while (*alst)
+    {
+        tmp = ft_lstdequeue(alst);
+        tmp->next = curr;
+        curr = tmp;
+    }
     return (curr);
 }

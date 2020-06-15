@@ -28,7 +28,8 @@ SRCS=ft_atoi.c ft_bzero.c ft_count_if.c ft_foreach.c ft_isalnum.c ft_isalpha.c\
 	ft_min.c ft_max.c ft_lstunlink.c ft_lstdequeue.c ft_slow_memchr.c\
 	ft_itoa_base.c ft_sqrt_floor.c ft_sqrt_ceil.c ft_nodedel.c get_next_line.c\
 	ft_dllnew.c ft_dlladd.c ft_dllappend.c ft_dllunlink.c ft_dlldel.c\
-	ft_dlldelone.c ft_dlldequeue.c ft_lstrev.c
+	ft_dlldelone.c ft_dlldequeue.c ft_lstrev.c ft_swap_ptr.c ft_isint.c\
+	ft_strarrdel.c
 
 OBJS:=$(SRCS:.c=.o)
 FLAGS= -Wall -Wextra -Werror
