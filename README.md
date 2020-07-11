@@ -1,6 +1,17 @@
 # Libft
+My implementation of [libc][1] functions and some additional ones.
 
-Libft is the first big project done at Codam and all other schools using the 42 curriculum.
-In this project we implement many of the libc functions.
+### TOC
+* [What is libft?](#what-is-libft)
+* [What's in it?](#whats-in-it)
+
+### What is libft?
+Libft is the first big project done at [Codam][2] and all other schools using the 42 curriculum.
+In this project we implement many of the libc functions and other functions that will be used throughout the curriculum.
 This project was later expanded upon to learn about low level optimization.
-It's also included in nearly all projects after it.
+
+At [Codam][2] we are generally not allowed to use code that we haven't written ourselves.
+This means that for most projects we are only allowed read(), write(), malloc() and free() from libc.
+
+[1] https://www.gnu.org/software/libc/ 
+[2] https://www.codam.nl/
