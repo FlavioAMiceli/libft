@@ -4,6 +4,7 @@ My implementation of [libc][1] functions and some additional ones.
 ### TOC
 * [What is libft?](#what-is-libft)
 * [What's in it?](#whats-in-it)
+* [Installation](#installation)
 
 ### What is libft?
 Libft is the first big project done at [Codam][2] and all other schools using the 42 curriculum.
@@ -16,7 +17,10 @@ This means that for most projects we are only allowed read(), write(), malloc() 
 ### What's in it?
 
 First of all this project needs to conform to the [libft project][3].
-I've also included functions to use doubly linked lists and hash tables.
+Besides the project's specifications I've also included functions to use doubly linked lists and hash tables.
+
+### Installation
+First of all clone this repo. The library is made using the included makefile.
 
 [1]: https://www.gnu.org/software/libc/ 
 [2]: https://www.codam.nl/
