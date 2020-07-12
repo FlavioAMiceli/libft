@@ -20,7 +20,7 @@ First of all this project needs to conform to the [libft project][3].
 Besides the project's specifications I've also included functions to use doubly linked lists and hash tables.
 
 ### Installation
-First of all clone this repo. The library is made using the included makefile.
+The library is made using the included makefile.
 
 [1]: https://www.gnu.org/software/libc/ 
 [2]: https://www.codam.nl/
