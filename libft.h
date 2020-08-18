@@ -17,7 +17,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "hashtable.h"
 
 # define TRUE 1
 # define FALSE 0
@@ -151,6 +150,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstdequeue(t_list **alst);
 t_list				*ft_lstunlink(t_list **head_node, t_list *to_unlink);
+t_list 				*ft_lstrev(t_list **alst);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstappend(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
